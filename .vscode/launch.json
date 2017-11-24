@@ -1,0 +1,38 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "(gdb) Pipe Attach",
+        //     "type": "cppdbg",
+        //     "request": "attach",
+        //     "program": "enter program name, for example ${workspaceRoot}/a.out",
+        //     "processId": "${command:pickRemoteProcess}",
+        //     "pipeTransport": {
+        //         "debuggerPath": "/usr/bin/gdb",
+        //         "pipeProgram": "/usr/bin/ssh",
+        //         "pipeArgs": [],
+        //         "pipeCwd": ""
+        //     },
+        //     "MIMode": "gdb"
+        // },
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/read",
+            "args": [ "./images/1.jpg"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
