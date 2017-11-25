@@ -1,3 +1,10 @@
+/*
+* Tested effect of different levels of quantization, as expected for >= 255 it goes all black
+* Why is quantization useful? What does it save ? 
+* Check for different methods to compare timings
+*
+*
+*/
 // #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -9,7 +16,7 @@ using namespace cv;
 Mat &ScanImageAndReduceC(Mat &I, const uchar *const table);
 
 int main(int argc, char **argv)
-{
+{//try differnt methods for time comparison ? or be smart and see what happens for different divideWidths ?
     double start = (double)getTickCount();
     int divideWith = 0; // convert our input string to number - C++ style
     stringstream s;
