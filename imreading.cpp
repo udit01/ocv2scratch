@@ -20,7 +20,7 @@ int main( int argc, char** argv )
  Mat gray_image;
  cvtColor( image, gray_image, CV_BGR2GRAY );
 
- imwrite( "./images/Gray_Image.jpg", gray_image );
+ imwrite( "./images/generated/Gray_Image.jpg", gray_image );
 
  namedWindow( imageName, CV_WINDOW_AUTOSIZE );
  namedWindow( "Gray image", CV_WINDOW_AUTOSIZE );
