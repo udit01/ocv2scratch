@@ -111,164 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named version.out
+# Target rules for targets named t.out
 
 # Build rule for target.
-version.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 version.out
-.PHONY : version.out
+t.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 t.out
+.PHONY : t.out
 
 # fast build rule for target.
-version.out/fast:
-	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/build
-.PHONY : version.out/fast
+t.out/fast:
+	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/build
+.PHONY : t.out/fast
 
-#=============================================================================
-# Target rules for targets named simple.out
+traverseImages.o: traverseImages.cpp.o
 
-# Build rule for target.
-simple.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple.out
-.PHONY : simple.out
-
-# fast build rule for target.
-simple.out/fast:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
-.PHONY : simple.out/fast
-
-#=============================================================================
-# Target rules for targets named read.out
-
-# Build rule for target.
-read.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 read.out
-.PHONY : read.out
-
-# fast build rule for target.
-read.out/fast:
-	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/build
-.PHONY : read.out/fast
-
-#=============================================================================
-# Target rules for targets named bgrTg.out
-
-# Build rule for target.
-bgrTg.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bgrTg.out
-.PHONY : bgrTg.out
-
-# fast build rule for target.
-bgrTg.out/fast:
-	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/build
-.PHONY : bgrTg.out/fast
-
-bgrToGray.o: bgrToGray.cpp.o
-
-.PHONY : bgrToGray.o
+.PHONY : traverseImages.o
 
 # target to build an object file
-bgrToGray.cpp.o:
-	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.o
-.PHONY : bgrToGray.cpp.o
+traverseImages.cpp.o:
+	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.o
+.PHONY : traverseImages.cpp.o
 
-bgrToGray.i: bgrToGray.cpp.i
+traverseImages.i: traverseImages.cpp.i
 
-.PHONY : bgrToGray.i
-
-# target to preprocess a source file
-bgrToGray.cpp.i:
-	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.i
-.PHONY : bgrToGray.cpp.i
-
-bgrToGray.s: bgrToGray.cpp.s
-
-.PHONY : bgrToGray.s
-
-# target to generate assembly for a file
-bgrToGray.cpp.s:
-	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.s
-.PHONY : bgrToGray.cpp.s
-
-imreading.o: imreading.cpp.o
-
-.PHONY : imreading.o
-
-# target to build an object file
-imreading.cpp.o:
-	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.o
-.PHONY : imreading.cpp.o
-
-imreading.i: imreading.cpp.i
-
-.PHONY : imreading.i
+.PHONY : traverseImages.i
 
 # target to preprocess a source file
-imreading.cpp.i:
-	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.i
-.PHONY : imreading.cpp.i
+traverseImages.cpp.i:
+	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.i
+.PHONY : traverseImages.cpp.i
 
-imreading.s: imreading.cpp.s
+traverseImages.s: traverseImages.cpp.s
 
-.PHONY : imreading.s
-
-# target to generate assembly for a file
-imreading.cpp.s:
-	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.s
-.PHONY : imreading.cpp.s
-
-simple.o: simple.cpp.o
-
-.PHONY : simple.o
-
-# target to build an object file
-simple.cpp.o:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.o
-.PHONY : simple.cpp.o
-
-simple.i: simple.cpp.i
-
-.PHONY : simple.i
-
-# target to preprocess a source file
-simple.cpp.i:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.i
-.PHONY : simple.cpp.i
-
-simple.s: simple.cpp.s
-
-.PHONY : simple.s
+.PHONY : traverseImages.s
 
 # target to generate assembly for a file
-simple.cpp.s:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.s
-.PHONY : simple.cpp.s
-
-version.o: version.cpp.o
-
-.PHONY : version.o
-
-# target to build an object file
-version.cpp.o:
-	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.o
-.PHONY : version.cpp.o
-
-version.i: version.cpp.i
-
-.PHONY : version.i
-
-# target to preprocess a source file
-version.cpp.i:
-	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.i
-.PHONY : version.cpp.i
-
-version.s: version.cpp.s
-
-.PHONY : version.s
-
-# target to generate assembly for a file
-version.cpp.s:
-	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.s
-.PHONY : version.cpp.s
+traverseImages.cpp.s:
+	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.s
+.PHONY : traverseImages.cpp.s
 
 # Help Target
 help:
@@ -278,22 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... version.out"
-	@echo "... simple.out"
-	@echo "... read.out"
-	@echo "... bgrTg.out"
-	@echo "... bgrToGray.o"
-	@echo "... bgrToGray.i"
-	@echo "... bgrToGray.s"
-	@echo "... imreading.o"
-	@echo "... imreading.i"
-	@echo "... imreading.s"
-	@echo "... simple.o"
-	@echo "... simple.i"
-	@echo "... simple.s"
-	@echo "... version.o"
-	@echo "... version.i"
-	@echo "... version.s"
+	@echo "... t.out"
+	@echo "... traverseImages.o"
+	@echo "... traverseImages.i"
+	@echo "... traverseImages.s"
 .PHONY : help
 
 
