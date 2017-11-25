@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/udit01/files/code/vision/scratches/imreading.cpp" "/media/udit01/files/code/vision/scratches/CMakeFiles/read.dir/imreading.cpp.o"
+  "/media/udit01/files/code/vision/scratches/simple.cpp" "/media/udit01/files/code/vision/scratches/CMakeFiles/simple.out.dir/simple.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

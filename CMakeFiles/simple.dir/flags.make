@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /usr/local/include -isystem /usr/local/include/opencv 
+CXX_INCLUDES = -I/media/udit01/files/code/vision/scratches -isystem /usr/local/include -isystem /usr/local/include/opencv 
 

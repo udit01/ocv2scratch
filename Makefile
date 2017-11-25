@@ -111,43 +111,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named simple
+# Target rules for targets named ver.out
 
 # Build rule for target.
-simple: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple
-.PHONY : simple
+ver.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ver.out
+.PHONY : ver.out
 
 # fast build rule for target.
-simple/fast:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/build
-.PHONY : simple/fast
+ver.out/fast:
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/build
+.PHONY : ver.out/fast
 
 #=============================================================================
-# Target rules for targets named read
+# Target rules for targets named simple.out
 
 # Build rule for target.
-read: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 read
-.PHONY : read
+simple.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple.out
+.PHONY : simple.out
 
 # fast build rule for target.
-read/fast:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/build
-.PHONY : read/fast
+simple.out/fast:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
+.PHONY : simple.out/fast
 
 #=============================================================================
-# Target rules for targets named ver
+# Target rules for targets named read.out
 
 # Build rule for target.
-ver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ver
-.PHONY : ver
+read.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 read.out
+.PHONY : read.out
 
 # fast build rule for target.
-ver/fast:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/build
-.PHONY : ver/fast
+read.out/fast:
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/build
+.PHONY : read.out/fast
 
 imreading.o: imreading.cpp.o
 
@@ -155,7 +155,7 @@ imreading.o: imreading.cpp.o
 
 # target to build an object file
 imreading.cpp.o:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/imreading.cpp.o
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.o
 .PHONY : imreading.cpp.o
 
 imreading.i: imreading.cpp.i
@@ -164,7 +164,7 @@ imreading.i: imreading.cpp.i
 
 # target to preprocess a source file
 imreading.cpp.i:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/imreading.cpp.i
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.i
 .PHONY : imreading.cpp.i
 
 imreading.s: imreading.cpp.s
@@ -173,7 +173,7 @@ imreading.s: imreading.cpp.s
 
 # target to generate assembly for a file
 imreading.cpp.s:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/imreading.cpp.s
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/imreading.cpp.s
 .PHONY : imreading.cpp.s
 
 simple.o: simple.cpp.o
@@ -182,7 +182,7 @@ simple.o: simple.cpp.o
 
 # target to build an object file
 simple.cpp.o:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/simple.cpp.o
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.o
 .PHONY : simple.cpp.o
 
 simple.i: simple.cpp.i
@@ -191,7 +191,7 @@ simple.i: simple.cpp.i
 
 # target to preprocess a source file
 simple.cpp.i:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/simple.cpp.i
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.i
 .PHONY : simple.cpp.i
 
 simple.s: simple.cpp.s
@@ -200,7 +200,7 @@ simple.s: simple.cpp.s
 
 # target to generate assembly for a file
 simple.cpp.s:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/simple.cpp.s
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.s
 .PHONY : simple.cpp.s
 
 version.o: version.cpp.o
@@ -209,7 +209,7 @@ version.o: version.cpp.o
 
 # target to build an object file
 version.cpp.o:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/version.cpp.o
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.o
 .PHONY : version.cpp.o
 
 version.i: version.cpp.i
@@ -218,7 +218,7 @@ version.i: version.cpp.i
 
 # target to preprocess a source file
 version.cpp.i:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/version.cpp.i
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.i
 .PHONY : version.cpp.i
 
 version.s: version.cpp.s
@@ -227,7 +227,7 @@ version.s: version.cpp.s
 
 # target to generate assembly for a file
 version.cpp.s:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/version.cpp.s
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.s
 .PHONY : version.cpp.s
 
 # Help Target
@@ -237,10 +237,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... simple"
-	@echo "... read"
-	@echo "... ver"
+	@echo "... ver.out"
 	@echo "... rebuild_cache"
+	@echo "... simple.out"
+	@echo "... read.out"
 	@echo "... imreading.o"
 	@echo "... imreading.i"
 	@echo "... imreading.s"

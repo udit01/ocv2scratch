@@ -60,113 +60,113 @@ CMAKE_SOURCE_DIR = /media/udit01/files/code/vision/scratches
 CMAKE_BINARY_DIR = /media/udit01/files/code/vision/scratches
 
 #=============================================================================
-# Target rules for target CMakeFiles/simple.dir
+# Target rules for target CMakeFiles/ver.out.dir
 
 # All Build rule for target.
-CMakeFiles/simple.dir/all:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/depend
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=3,4 "Built target simple"
-.PHONY : CMakeFiles/simple.dir/all
+CMakeFiles/ver.out.dir/all:
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/depend
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=5,6 "Built target ver.out"
+.PHONY : CMakeFiles/ver.out.dir/all
 
 # Include target in all.
-all: CMakeFiles/simple.dir/all
+all: CMakeFiles/ver.out.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/simple.dir/rule: cmake_check_build_system
+CMakeFiles/ver.out.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simple.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ver.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 0
-.PHONY : CMakeFiles/simple.dir/rule
+.PHONY : CMakeFiles/ver.out.dir/rule
 
 # Convenience name for target.
-simple: CMakeFiles/simple.dir/rule
+ver.out: CMakeFiles/ver.out.dir/rule
 
-.PHONY : simple
-
-# clean rule for target.
-CMakeFiles/simple.dir/clean:
-	$(MAKE) -f CMakeFiles/simple.dir/build.make CMakeFiles/simple.dir/clean
-.PHONY : CMakeFiles/simple.dir/clean
+.PHONY : ver.out
 
 # clean rule for target.
-clean: CMakeFiles/simple.dir/clean
+CMakeFiles/ver.out.dir/clean:
+	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/clean
+.PHONY : CMakeFiles/ver.out.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ver.out.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/read.dir
+# Target rules for target CMakeFiles/simple.out.dir
 
 # All Build rule for target.
-CMakeFiles/read.dir/all:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/depend
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=1,2 "Built target read"
-.PHONY : CMakeFiles/read.dir/all
+CMakeFiles/simple.out.dir/all:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/depend
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=3,4 "Built target simple.out"
+.PHONY : CMakeFiles/simple.out.dir/all
 
 # Include target in all.
-all: CMakeFiles/read.dir/all
+all: CMakeFiles/simple.out.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/read.dir/rule: cmake_check_build_system
+CMakeFiles/simple.out.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/read.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simple.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 0
-.PHONY : CMakeFiles/read.dir/rule
+.PHONY : CMakeFiles/simple.out.dir/rule
 
 # Convenience name for target.
-read: CMakeFiles/read.dir/rule
+simple.out: CMakeFiles/simple.out.dir/rule
 
-.PHONY : read
-
-# clean rule for target.
-CMakeFiles/read.dir/clean:
-	$(MAKE) -f CMakeFiles/read.dir/build.make CMakeFiles/read.dir/clean
-.PHONY : CMakeFiles/read.dir/clean
+.PHONY : simple.out
 
 # clean rule for target.
-clean: CMakeFiles/read.dir/clean
+CMakeFiles/simple.out.dir/clean:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/clean
+.PHONY : CMakeFiles/simple.out.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/simple.out.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ver.dir
+# Target rules for target CMakeFiles/read.out.dir
 
 # All Build rule for target.
-CMakeFiles/ver.dir/all:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/depend
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=5,6 "Built target ver"
-.PHONY : CMakeFiles/ver.dir/all
+CMakeFiles/read.out.dir/all:
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/depend
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/udit01/files/code/vision/scratches/CMakeFiles --progress-num=1,2 "Built target read.out"
+.PHONY : CMakeFiles/read.out.dir/all
 
 # Include target in all.
-all: CMakeFiles/ver.dir/all
+all: CMakeFiles/read.out.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ver.dir/rule: cmake_check_build_system
+CMakeFiles/read.out.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ver.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/read.out.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /media/udit01/files/code/vision/scratches/CMakeFiles 0
-.PHONY : CMakeFiles/ver.dir/rule
+.PHONY : CMakeFiles/read.out.dir/rule
 
 # Convenience name for target.
-ver: CMakeFiles/ver.dir/rule
+read.out: CMakeFiles/read.out.dir/rule
 
-.PHONY : ver
-
-# clean rule for target.
-CMakeFiles/ver.dir/clean:
-	$(MAKE) -f CMakeFiles/ver.dir/build.make CMakeFiles/ver.dir/clean
-.PHONY : CMakeFiles/ver.dir/clean
+.PHONY : read.out
 
 # clean rule for target.
-clean: CMakeFiles/ver.dir/clean
+CMakeFiles/read.out.dir/clean:
+	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/clean
+.PHONY : CMakeFiles/read.out.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/read.out.dir/clean
 
 .PHONY : clean
 

@@ -1,31 +1,21 @@
 #include <stdio.h>
 #include <cv.h>
+#include "IntroConfig.h"
+
+void ver::printVersion()
+{
+    // fprintf(stdout, "Version %d.%d\n",
+    //         Intro_VERSION_MAJOR,
+    //         Intro_VERSION_MINOR);
+    printf("Scratch Version %d.%d\n", Intro_VERSION_MAJOR, Intro_VERSION_MINOR);
+
+    return; 
+}
+
 
 int main(void)
 {
-    printf("%s\r\n", CV_VERSION);
-    printf("%u.%u.%u\r\n", CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
+    ver::printVersion();
+    //for fun
+    return 0;
 }
-
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo
-// hellloooo

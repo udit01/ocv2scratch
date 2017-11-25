@@ -1,0 +1,10 @@
+// the configured options and settings for Tutorial
+#define Intro_VERSION_MAJOR @Intro_VERSION_MAJOR@
+#define Intro_VERSION_MINOR @Intro_VERSION_MINOR@
+
+//extern "C"{
+namespace ver
+{
+    void printVersion();
+}
+//}

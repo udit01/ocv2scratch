@@ -1,9 +1,29 @@
 cmake_minimum_required(VERSION 2.8)
+
 project( intro )
+
+set (Intro_VERSION_MAJOR 1)
+set (Intro_VERSION_MINOR 0)
+ 
 find_package( OpenCV REQUIRED )
-add_executable( simple simple.cpp )
-add_executable( ver version.cpp )
-add_executable( read imreading.cpp )
-target_link_libraries( simple ${OpenCV_LIBS} )
-target_link_libraries( ver ${OpenCV_LIBS} )
-target_link_libraries( read ${OpenCV_LIBS} )
+
+# configure a header file to pass some of the CMake settings
+# to the source code
+configure_file (
+  "${PROJECT_SOURCE_DIR}/IntroConfig.h.in"
+  "${PROJECT_BINARY_DIR}/IntroConfig.h"
+  )
+
+# add the binary tree to the search path for include files ?
+# so that we will find IntroConfig.h
+include_directories("${PROJECT_BINARY_DIR}")
+ 
+# add the executables
+add_executable( ver.out version.cpp )
+target_link_libraries( ver.out ${OpenCV_LIBS} )
+
+add_executable( simple.out simple.cpp )
+target_link_libraries( simple.out ${OpenCV_LIBS} )
+
+add_executable( read.out imreading.cpp )
+target_link_libraries( read.out ${OpenCV_LIBS} )
