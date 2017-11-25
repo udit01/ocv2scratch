@@ -1,8 +1,5 @@
 #include <stdio.h>
-// #include <opencv2/cv.h>
-#include <opencv2/core/core.hpp>
-
-#include <opencv2/opencv.hpp>
+#include "ocv.h"
 #include "IntroConfig.h"
 
 using namespace cv;

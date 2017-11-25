@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named simple.out
-
-# Build rule for target.
-simple.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple.out
-.PHONY : simple.out
-
-# fast build rule for target.
-simple.out/fast:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
-.PHONY : simple.out/fast
-
-#=============================================================================
 # Target rules for targets named version.out
 
 # Build rule for target.
@@ -137,6 +124,19 @@ version.out/fast:
 .PHONY : version.out/fast
 
 #=============================================================================
+# Target rules for targets named simple.out
+
+# Build rule for target.
+simple.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple.out
+.PHONY : simple.out
+
+# fast build rule for target.
+simple.out/fast:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
+.PHONY : simple.out/fast
+
+#=============================================================================
 # Target rules for targets named read.out
 
 # Build rule for target.
@@ -148,6 +148,46 @@ read.out: cmake_check_build_system
 read.out/fast:
 	$(MAKE) -f CMakeFiles/read.out.dir/build.make CMakeFiles/read.out.dir/build
 .PHONY : read.out/fast
+
+#=============================================================================
+# Target rules for targets named bgrTg.out
+
+# Build rule for target.
+bgrTg.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bgrTg.out
+.PHONY : bgrTg.out
+
+# fast build rule for target.
+bgrTg.out/fast:
+	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/build
+.PHONY : bgrTg.out/fast
+
+bgrToGray.o: bgrToGray.cpp.o
+
+.PHONY : bgrToGray.o
+
+# target to build an object file
+bgrToGray.cpp.o:
+	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.o
+.PHONY : bgrToGray.cpp.o
+
+bgrToGray.i: bgrToGray.cpp.i
+
+.PHONY : bgrToGray.i
+
+# target to preprocess a source file
+bgrToGray.cpp.i:
+	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.i
+.PHONY : bgrToGray.cpp.i
+
+bgrToGray.s: bgrToGray.cpp.s
+
+.PHONY : bgrToGray.s
+
+# target to generate assembly for a file
+bgrToGray.cpp.s:
+	$(MAKE) -f CMakeFiles/bgrTg.out.dir/build.make CMakeFiles/bgrTg.out.dir/bgrToGray.cpp.s
+.PHONY : bgrToGray.cpp.s
 
 imreading.o: imreading.cpp.o
 
@@ -237,10 +277,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... simple.out"
-	@echo "... version.out"
-	@echo "... read.out"
 	@echo "... rebuild_cache"
+	@echo "... version.out"
+	@echo "... simple.out"
+	@echo "... read.out"
+	@echo "... bgrTg.out"
+	@echo "... bgrToGray.o"
+	@echo "... bgrToGray.i"
+	@echo "... bgrToGray.s"
 	@echo "... imreading.o"
 	@echo "... imreading.i"
 	@echo "... imreading.s"

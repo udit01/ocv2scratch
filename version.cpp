@@ -1,6 +1,5 @@
 #include <stdio.h>
-// #include <iostream>
-// #include <cv.h>
+#include "ocv.h"
 #include "IntroConfig.h"
 
 void ver::printVersion()
