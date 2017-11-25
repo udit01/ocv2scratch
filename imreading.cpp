@@ -13,7 +13,7 @@ int main(int argc, char **argv)
   Mat image;
   image = imread(imageName, 1);
 
-  printVersion();
+  // ver::printVersion();
 
   if (argc != 2 || !image.data)
   {

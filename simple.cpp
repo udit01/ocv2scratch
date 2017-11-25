@@ -1,12 +1,15 @@
 #include <stdio.h>
+// #include <opencv2/cv.h>
+#include <opencv2/core/core.hpp>
+
 #include <opencv2/opencv.hpp>
 #include "IntroConfig.h"
 
-// using namespace cv;
+using namespace cv;
 
 int main(int argc, char **argv)
 {
-    ver::printVersion();
+    // ver::printVersion();
 
     if (argc != 2)
     {
@@ -14,18 +17,18 @@ int main(int argc, char **argv)
         return -1;
     }
     
-    cv::Mat image;
-    image = cv::imread(argv[1], 1);
+    Mat image;
+    image = imread(argv[1], 1);
 
     if (!image.data)
     {
         printf("No image data \n");
         return -1;
     }
-    cv::namedWindow("Display Image", cv::WINDOW_AUTOSIZE);
-    cv::imshow("Display Image", image);
+    namedWindow("Display Image", WINDOW_AUTOSIZE);
+    imshow("Display Image", image);
 
-    cv::waitKey(0);
+    waitKey(0);
 
     return 0;
 }
