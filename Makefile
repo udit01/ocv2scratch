@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named t.out
+# Target rules for targets named m.out
 
 # Build rule for target.
-t.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 t.out
-.PHONY : t.out
+m.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 m.out
+.PHONY : m.out
 
 # fast build rule for target.
-t.out/fast:
-	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/build
-.PHONY : t.out/fast
+m.out/fast:
+	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/build
+.PHONY : m.out/fast
 
-traverseImages.o: traverseImages.cpp.o
+mask.o: mask.cpp.o
 
-.PHONY : traverseImages.o
+.PHONY : mask.o
 
 # target to build an object file
-traverseImages.cpp.o:
-	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.o
-.PHONY : traverseImages.cpp.o
+mask.cpp.o:
+	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.o
+.PHONY : mask.cpp.o
 
-traverseImages.i: traverseImages.cpp.i
+mask.i: mask.cpp.i
 
-.PHONY : traverseImages.i
+.PHONY : mask.i
 
 # target to preprocess a source file
-traverseImages.cpp.i:
-	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.i
-.PHONY : traverseImages.cpp.i
+mask.cpp.i:
+	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.i
+.PHONY : mask.cpp.i
 
-traverseImages.s: traverseImages.cpp.s
+mask.s: mask.cpp.s
 
-.PHONY : traverseImages.s
+.PHONY : mask.s
 
 # target to generate assembly for a file
-traverseImages.cpp.s:
-	$(MAKE) -f CMakeFiles/t.out.dir/build.make CMakeFiles/t.out.dir/traverseImages.cpp.s
-.PHONY : traverseImages.cpp.s
+mask.cpp.s:
+	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.s
+.PHONY : mask.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... t.out"
-	@echo "... traverseImages.o"
-	@echo "... traverseImages.i"
-	@echo "... traverseImages.s"
+	@echo "... m.out"
+	@echo "... mask.o"
+	@echo "... mask.i"
+	@echo "... mask.s"
 .PHONY : help
 
 
