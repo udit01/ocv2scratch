@@ -1,5 +1,0 @@
-/media/udit01/files/code/vision/scratches/CMakeFiles/edit_cache.dir
-/media/udit01/files/code/vision/scratches/CMakeFiles/ver.out.dir
-/media/udit01/files/code/vision/scratches/CMakeFiles/rebuild_cache.dir
-/media/udit01/files/code/vision/scratches/CMakeFiles/simple.out.dir
-/media/udit01/files/code/vision/scratches/CMakeFiles/read.out.dir
