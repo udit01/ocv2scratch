@@ -19,11 +19,13 @@ configure_file (
 include_directories("${PROJECT_BINARY_DIR}")
  
 # add the executables
-add_executable( simple.out simple.cpp)
-target_link_libraries( ${OpenCV_LIBS} )
-
 add_executable( version.out version.cpp )
-target_link_libraries( ${OpenCV_LIBS})
+target_link_libraries(version.out ${OpenCV_LIBS})
+
+
+add_executable( simple.out simple.cpp)
+target_link_libraries( simple.out ${OpenCV_LIBS} )
+
 
 #add_dependencies(simple.out ver.out )
 #target_link_libraries( simple.out ${OpenCV_LIBS} ${CMAKE_SOURCE_DIR}/simple.cpp)

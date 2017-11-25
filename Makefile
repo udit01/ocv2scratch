@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ver.out
-
-# Build rule for target.
-ver.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ver.out
-.PHONY : ver.out
-
-# fast build rule for target.
-ver.out/fast:
-	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/build
-.PHONY : ver.out/fast
-
-#=============================================================================
 # Target rules for targets named simple.out
 
 # Build rule for target.
@@ -135,6 +122,19 @@ simple.out: cmake_check_build_system
 simple.out/fast:
 	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
 .PHONY : simple.out/fast
+
+#=============================================================================
+# Target rules for targets named version.out
+
+# Build rule for target.
+version.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 version.out
+.PHONY : version.out
+
+# fast build rule for target.
+version.out/fast:
+	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/build
+.PHONY : version.out/fast
 
 #=============================================================================
 # Target rules for targets named read.out
@@ -209,7 +209,7 @@ version.o: version.cpp.o
 
 # target to build an object file
 version.cpp.o:
-	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.o
+	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.o
 .PHONY : version.cpp.o
 
 version.i: version.cpp.i
@@ -218,7 +218,7 @@ version.i: version.cpp.i
 
 # target to preprocess a source file
 version.cpp.i:
-	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.i
+	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.i
 .PHONY : version.cpp.i
 
 version.s: version.cpp.s
@@ -227,7 +227,7 @@ version.s: version.cpp.s
 
 # target to generate assembly for a file
 version.cpp.s:
-	$(MAKE) -f CMakeFiles/ver.out.dir/build.make CMakeFiles/ver.out.dir/version.cpp.s
+	$(MAKE) -f CMakeFiles/version.out.dir/build.make CMakeFiles/version.out.dir/version.cpp.s
 .PHONY : version.cpp.s
 
 # Help Target
@@ -237,10 +237,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... ver.out"
-	@echo "... rebuild_cache"
 	@echo "... simple.out"
+	@echo "... version.out"
 	@echo "... read.out"
+	@echo "... rebuild_cache"
 	@echo "... imreading.o"
 	@echo "... imreading.i"
 	@echo "... imreading.s"
