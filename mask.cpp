@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
     // Sharpen(image,imageOutput);
     Mat kern = (Mat_<char>(3, 3) << -1, -1, -1 ,
-                                     0, 0, 0 ,
+                                             0, 0, 0 ,
                                      1, 1, 1 );
 
     filter2D(image, imageOutput, image.depth(), kern);
