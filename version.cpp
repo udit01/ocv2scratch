@@ -13,9 +13,9 @@ void ver::printVersion()
 }
 
 
-int main(void)
-{
-    ver::printVersion();
-    //for fung
-    return 0;
-}
+// int main(void)
+// {
+//     ver::printVersion();
+//     //for fung
+//     return 0;
+// }

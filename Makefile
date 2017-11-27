@@ -123,6 +123,19 @@ m.out/fast:
 	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/build
 .PHONY : m.out/fast
 
+#=============================================================================
+# Target rules for targets named simple.out
+
+# Build rule for target.
+simple.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple.out
+.PHONY : simple.out
+
+# fast build rule for target.
+simple.out/fast:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
+.PHONY : simple.out/fast
+
 mask.o: mask.cpp.o
 
 .PHONY : mask.o
@@ -150,6 +163,60 @@ mask.cpp.s:
 	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.s
 .PHONY : mask.cpp.s
 
+simple.o: simple.cpp.o
+
+.PHONY : simple.o
+
+# target to build an object file
+simple.cpp.o:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.o
+.PHONY : simple.cpp.o
+
+simple.i: simple.cpp.i
+
+.PHONY : simple.i
+
+# target to preprocess a source file
+simple.cpp.i:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.i
+.PHONY : simple.cpp.i
+
+simple.s: simple.cpp.s
+
+.PHONY : simple.s
+
+# target to generate assembly for a file
+simple.cpp.s:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.s
+.PHONY : simple.cpp.s
+
+version.o: version.cpp.o
+
+.PHONY : version.o
+
+# target to build an object file
+version.cpp.o:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.o
+.PHONY : version.cpp.o
+
+version.i: version.cpp.i
+
+.PHONY : version.i
+
+# target to preprocess a source file
+version.cpp.i:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.i
+.PHONY : version.cpp.i
+
+version.s: version.cpp.s
+
+.PHONY : version.s
+
+# target to generate assembly for a file
+version.cpp.s:
+	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.s
+.PHONY : version.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +226,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... m.out"
+	@echo "... simple.out"
 	@echo "... mask.o"
 	@echo "... mask.i"
 	@echo "... mask.s"
+	@echo "... simple.o"
+	@echo "... simple.i"
+	@echo "... simple.s"
+	@echo "... version.o"
+	@echo "... version.i"
+	@echo "... version.s"
 .PHONY : help
 
 

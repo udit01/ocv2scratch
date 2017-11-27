@@ -6,7 +6,7 @@ using namespace cv;
 
 int main(int argc, char **argv)
 {
-    // ver::printVersion();
+    ver::printVersion();
 
     if (argc != 2)
     {

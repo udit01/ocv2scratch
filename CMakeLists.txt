@@ -22,7 +22,7 @@ include_directories("${PROJECT_BINARY_DIR}")
 # add the executables
 #add_executable( version.out version.cpp )
 #target_link_libraries(version.out ${OpenCV_LIBS})
-#add_executable( simple.out simple.cpp)
+#add_executable( simple.out version.cpp simple.cpp)
 #target_link_libraries( simple.out ${OpenCV_LIBS} )
 #add_executable( read.out imreading.cpp )
 #target_link_libraries( read.out ${OpenCV_LIBS} )
