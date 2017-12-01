@@ -1,3 +1,9 @@
+/*
+    What about mean in multiple channels ?
+    stand-dev same
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sstream>
@@ -72,8 +78,8 @@ int main(int argc, char **argv)
     // std::cout << image.rows << " is the image number of rows\n";
     // std::cout << image.cols << " is the image number of columns\n";
     
-    // std::cout << numRows << " is the numRows\n";
-    // std::cout << numCols << " is the numColumns\n";
+    std::cout << numRows << " is the numRows\n";
+    std::cout << numCols << " is the numColumns\n";
     
     std::vector<std::string> maskTokens = split(maskPath, '/');
     std::vector<std::string> imageTokens = split(imagePath, '/');
@@ -125,6 +131,7 @@ int main(int argc, char **argv)
             
             int detectSkin = detectSum(maskCut);
             // boolData[i * bool_stride + j] = detectSkin ? 1 : 0;
+            // std::cout<<detectSkin<<std::endl;
             boolData[i * bool_stride + j] = detectSkin;
             
             float mean = computeMean(imageCut);
@@ -214,7 +221,8 @@ void writeCSVbool(cv::Mat &m, const char *filePath)
     {
         for (int j = 0; j < m.cols; j++)
         {
-            fout << m.at<uchar>(i, j) << ", ";
+            // std::cout << m.at<bool>(i,j)<<"Line 218\n";
+            fout << m.at<bool>(i, j) << ", ";
         }
         fout << std::endl;
     }
