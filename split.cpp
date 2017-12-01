@@ -1,7 +1,31 @@
+/*
+Author : Udit Jain [udit01]
+
+This code slices the forward image in desired number of partitions as the 3rd and 4th argument 
+1st argument will be the path to the mask and 2nd argument is the path to the image itself
+Currently I am pushing folders in an ignore folder not to load the repo too much
+Usage:-
+./split.out ./mask.jpg ./origImg.png 32 32
+
+the mask and original image may be of different extensions, the not[black] pixels in the mask will be taken out
+in the skin directory and rest will be dumped in other directory
+
+Works on linux as used mkdir. Change for windows
+Running with CMake by standard add_executables function and adding OpenCv as a dependecy
+
+detectSum function can be changed to provide different varients.
+
+Naming of the images is done according to the porition of which ie 00.png will be top left then grid on remaining similarly
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sstream>
-#include "ocv.h"
+#include <opencv2/core/core.hpp>
+#include <opencv2/core/utility.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/opencv.hpp>
 
 // using namespace std;
 // using namespace cv;
@@ -74,12 +98,14 @@ int main(int argc, char **argv)
 
     dirNameDetected << imageColoredNameWithExt[0];
     dirNameDetected << "_CUT_" << numX << "X" << numY;
-    dirNameDetected << "_coloured_peices";
+    dirNameDetected << "_skin";
 
-    std::string folderCreateCommand = "mkdir " + dirName.str();
-    std::string folderCreateCommandDetcted = "mkdir " + dirNameDetected.str();
+    std::string parentFolderCreateCommand = "mkdir ./ignore" ;
+    std::string folderCreateCommand = "mkdir ./ignore/" + dirName.str();
+    std::string folderCreateCommandDetcted = "mkdir ./ignore/" + dirNameDetected.str();
 
     // try{
+    system(parentFolderCreateCommand.c_str());
     system(folderCreateCommand.c_str());
     system(folderCreateCommandDetcted.c_str());
     // }
@@ -89,14 +115,14 @@ int main(int argc, char **argv)
 
     std::stringstream dirPath;
     std::stringstream dirPathDetected;
-    dirPath << "./" << dirName.str() << "/";
-    dirPathDetected << "./" << dirNameDetected.str() << "/";
+    dirPath << "./ignore/" << dirName.str() << "/";
+    dirPathDetected << "./ignore/" << dirNameDetected.str() << "/";
 
     cv::Mat smallImage;
     cv::Mat smallImageColored;
 
-    try
-    {
+    // try
+    // {
 
         for (int i = 0; i < numX; i++)
         {
@@ -110,26 +136,33 @@ int main(int argc, char **argv)
 
                 std::cout << "Detect for i = " << i << " & j = " << j << " is : " << detectIs << "\n";
 
-                if (!detectIs)
+                if (detectIs)
                 {
-                    cutName << dirPath.str() << i << j << "." << imageColoredNameWithExt[1];
+                    // cv::namedWindow( "img" , CV_WINDOW_AUTOSIZE);
+                    // cv::namedWindow( "imgMask" , CV_WINDOW_AUTOSIZE);
+                    // cv::imshow("img", smallImage);
+                    // cv::imshow("imgMask", smallImageColored);
+                    // cv::waitKey(0);
+
+                    cutName << dirPathDetected.str() << i << j << "." << imageColoredNameWithExt[1];
                     smallImageColored = cv::Mat(imageColored, cv::Rect(i * width, j * height, width, height));
                     cv::imwrite(cutName.str(), smallImageColored);
                 }
                 else
                 {
-                    cutName << dirPathDetected.str() << i << j << "." << imageNameWithExt[1];
+                    cutName << dirPath.str() << i << j << "." << imageNameWithExt[1];
                     cv::imwrite(cutName.str(), smallImage);
                 }
 
                 std::cout << "Done:: " << cutName.str() << '\n';
             }
         }
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Maybe the file dimensions are different";
-    }
+    // }
+    // catch (std::exception &e)
+    // {
+        
+    //     std::cout << "Maybe the file dimensions don't match";
+    // }
     double endt = ((double)cv::getTickCount() - start) / cv::getTickFrequency();
 
     std::cout << "Times passed in seconds for cutting: " << endt << std::endl;
