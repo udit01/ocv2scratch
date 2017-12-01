@@ -1,6 +1,8 @@
 /*
-    What about mean in multiple channels ?
-    stand-dev same
+    Author :- Udit Jain [udit01]
+
+    What about mean in multiple channels ? [fixed as converted to single channel]
+    stand-dev same done
 */
 
 
@@ -17,9 +19,10 @@
 int numRows;
 int numCols;
 
-int detectSum(cv::Mat &img);
 std::vector<std::string> split(std::string &s, char delimiter);
-float computeMean(cv::Mat &img);
+int detectSum(cv::Mat &img);
+float* computeMeanStdDev(cv::Mat &img);
+// float computeStdDev(cv::Mat &img);
 void writeCSVfloat(float** m, const char *filePath);
 void writeCSVbool(cv::Mat &img, const char *filePath);
 
@@ -33,11 +36,11 @@ int main(int argc, char **argv)
 
     try
     {
-        streamX << argv[3];
+        streamX << argv[4];
         streamX >> windowWidth;
 
         // i.str("");
-        streamY << argv[4];
+        streamY << argv[5];
         streamY >> windowHeight;
     }
     catch (std::exception &e)
@@ -46,12 +49,14 @@ int main(int argc, char **argv)
     }
 
     std::string maskPath = argv[1];
-    std::string imagePath = argv[2];
+    std::string coloRimagePath = argv[2];
+    std::string iRimagePath = argv[3];//after this , used directly inside for loop
 
     cv::Mat mask = cv::imread(maskPath, 1);
-    cv::Mat image = cv::imread(imagePath, 1);
+    cv::Mat coloRimage = cv::imread(coloRimagePath, 1);
+    cv::Mat iRimage = cv::imread(iRimagePath,1);
 
-    if (!image.data)
+    if (!coloRimage.data)
     {
         printf(" No image data \n ");
         return -1;
@@ -63,11 +68,17 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    if (!(image.size == mask.size))
+    if (!(coloRimage.size == mask.size))
     {
         printf(" Different sizes of image and it's mask. \n");
     }
-    
+    if (!(iRimage.size == mask.size))
+    {
+        printf(" Different sizes of IR image and it's mask. \n");
+    }
+    cv::Mat image ;
+    cv::cvtColor(coloRimage, image, cv::COLOR_BGR2GRAY);//here is the conversion default used at present
+
     // printf(image.size);
     // std::cout << image.size << " is the image size\n";
     // std::cout << mask.size << " is the mask size\n";
@@ -82,7 +93,7 @@ int main(int argc, char **argv)
     std::cout << numCols << " is the numColumns\n";
     
     std::vector<std::string> maskTokens = split(maskPath, '/');
-    std::vector<std::string> imageTokens = split(imagePath, '/');
+    std::vector<std::string> imageTokens = split(coloRimagePath, '/');
     //mNWE stands for mask name with extension
     std::vector<std::string> maskNameWithExt = split(maskTokens.at(maskTokens.size() - 1), '.');
     std::vector<std::string> imageNameWithExt = split(imageTokens.at(imageTokens.size() - 1), '.');
@@ -101,6 +112,7 @@ int main(int argc, char **argv)
     
     cv::Mat maskCut;
     cv::Mat imageCut;
+    cv::Mat irImageCut;
     
     // cv::Mat meanMatrix(numRows, numCols, CV_32FC1);
     cv::Mat boolMatrix(numRows, numCols, CV_8UC(1)); //wasted space
@@ -109,7 +121,13 @@ int main(int argc, char **argv)
     int bool_stride = boolMatrix.step;
     // std::cout << "BOOl stride " << bool_stride << "\n";
     // unsigned char * meanData = meanMatrix.data; //because I forget the type
-    float **meanM = new float*[numRows];
+    float **meanMatrixColor = new float*[numRows];
+    float **stdDevMatrixColor = new float*[numRows];
+    float **meanMatrixIR = new float*[numRows];
+    float **stdDevMatrixIR = new float*[numRows];
+
+    float *mstdevCol;
+    float *mstdevIR;
     // float **zArray = new float *[imheight];
     // int mean_stride = meanMatrix.step;
     // std::cout << "Mean stride " << mean_stride << "\n";
@@ -118,7 +136,11 @@ int main(int argc, char **argv)
     
     for (int i = 0; i < numRows; i++)
     {
-        meanM[i] = new float[numCols];
+        meanMatrixColor[i] = new float[numCols];
+        stdDevMatrixColor[i] = new float[numCols];
+        meanMatrixIR[i] = new float[numCols];
+        stdDevMatrixIR[i] = new float[numCols];
+
         for (int j = 0; j < numCols; j++)
         {
             // printf("CHECKPOINT 101 ::::: i=%d & j=%d  \n",i,j);
@@ -128,18 +150,27 @@ int main(int argc, char **argv)
             
             maskCut = cv::Mat(mask, cv::Rect( j * windowWidth, i * windowHeight ,  windowWidth, windowHeight));
             imageCut = cv::Mat(image, cv::Rect(j * windowWidth, i * windowHeight, windowWidth, windowHeight));
-            
+            irImageCut = cv::Mat(iRimage , cv::Rect(j * windowWidth, i * windowHeight, windowWidth, windowHeight));
+
             int detectSkin = detectSum(maskCut);
             // boolData[i * bool_stride + j] = detectSkin ? 1 : 0;
             // std::cout<<detectSkin<<std::endl;
-            boolData[i * bool_stride + j] = detectSkin;
+            boolData[i * bool_stride + j] = detectSkin;//let it remain
             
-            float mean = computeMean(imageCut);
+            mstdevCol = computeMeanStdDev(imageCut);
+            mstdevIR = computeMeanStdDev(irImageCut);
+            // float meanCol = computeMean(imageCut);
+            // float meanIR = computeMean(irImageCut);
+            // float stdDevCol = computeStdDev(imageCut);
+            // float stdDevIR = computeStdDev(irImageCut);
             // std::cout<<mean<<std::endl;
             
             // meanData[i * mean_stride + j] = mean;//has some error--------------------------------
             // meanMatrix.data.at<float>(i,j) = mean;
-            meanM[i][j] = mean;
+            meanMatrixColor[i][j] = mstdevCol[0];
+            stdDevMatrixColor[i][j] = mstdevCol[1];
+            meanMatrixIR[i][j] = mstdevIR[0];
+            stdDevMatrixIR[i][j] = mstdevIR[1];
 
             if (detectSkin == 1)
             {
@@ -158,20 +189,30 @@ int main(int argc, char **argv)
     }
     
     // printf("CHECKPOINT ::::: 125\n");
-    std::stringstream meanFile ;
+    std::stringstream meanFileCol ;
+    std::stringstream meanFileIR ;
+    std::stringstream stdDevFileCol ;
+    std::stringstream stdDevFileIR ;
     std::stringstream boolFile ;
     
-    meanFile << "./ignore/" << imageNameWithExt[0] << "_mean.csv";
     boolFile << "./ignore/" << imageNameWithExt[0] << "_boolValues.csv";
+    meanFileCol << "./ignore/" << imageNameWithExt[0] << "_mean_color.csv";
+    stdDevFileCol << "./ignore/" << imageNameWithExt[0] << "_stdDev_color.csv";
+    meanFileIR << "./ignore/" << imageNameWithExt[0] << "_mean_ir.csv";
+    stdDevFileIR << "./ignore/" << imageNameWithExt[0] << "_stdDev_ir.csv";
 
     // printf("CHECKPOINT ::::: 157\n");
     // cv::FileStorage fs(meanFile.str(), cv::FileStorage::WRITE);
     // fs << "Mean Matrix" <<meanMatrix; //choose any key here, just be consistant with the one below
     // fs.release();
     // printf("CHECKPOINT ::::: 160\n");
-
-    writeCSVfloat(meanM , meanFile.str().c_str());
+    
     writeCSVbool(boolMatrix , boolFile.str().c_str());
+
+    writeCSVfloat(meanMatrixColor , meanFileCol.str().c_str());
+    writeCSVfloat(stdDevMatrixColor , stdDevFileCol.str().c_str());
+    writeCSVfloat(meanMatrixIR , meanFileIR.str().c_str());
+    writeCSVfloat(stdDevMatrixIR , stdDevFileIR.str().c_str());
     
     return 0;
 }
@@ -230,9 +271,13 @@ void writeCSVbool(cv::Mat &m, const char *filePath)
     fout.close();
     return;
 }
-float computeMean(cv::Mat& img){
-    cv::Scalar sc = cv::mean (img);
-    return sc.val[0];//what if multiple channels?
+float* computeMeanStdDev(cv::Mat& img){
+    cv::Scalar mean,stdDev;
+    float* res = new float[2];
+    cv::meanStdDev(img,mean,stdDev,cv::Mat());
+    res[0] = mean[0];
+    res[1] = stdDev[0];
+    return res;//what if multiple channels?
 }
 
 std::vector<std::string> split(std::string & s, char delimiter)
