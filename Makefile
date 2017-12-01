@@ -111,111 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named m.out
+# Target rules for targets named split.out
 
 # Build rule for target.
-m.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 m.out
-.PHONY : m.out
+split.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 split.out
+.PHONY : split.out
 
 # fast build rule for target.
-m.out/fast:
-	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/build
-.PHONY : m.out/fast
+split.out/fast:
+	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/build
+.PHONY : split.out/fast
 
-#=============================================================================
-# Target rules for targets named simple.out
+split.o: split.cpp.o
 
-# Build rule for target.
-simple.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simple.out
-.PHONY : simple.out
-
-# fast build rule for target.
-simple.out/fast:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/build
-.PHONY : simple.out/fast
-
-mask.o: mask.cpp.o
-
-.PHONY : mask.o
+.PHONY : split.o
 
 # target to build an object file
-mask.cpp.o:
-	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.o
-.PHONY : mask.cpp.o
+split.cpp.o:
+	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.o
+.PHONY : split.cpp.o
 
-mask.i: mask.cpp.i
+split.i: split.cpp.i
 
-.PHONY : mask.i
-
-# target to preprocess a source file
-mask.cpp.i:
-	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.i
-.PHONY : mask.cpp.i
-
-mask.s: mask.cpp.s
-
-.PHONY : mask.s
-
-# target to generate assembly for a file
-mask.cpp.s:
-	$(MAKE) -f CMakeFiles/m.out.dir/build.make CMakeFiles/m.out.dir/mask.cpp.s
-.PHONY : mask.cpp.s
-
-simple.o: simple.cpp.o
-
-.PHONY : simple.o
-
-# target to build an object file
-simple.cpp.o:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.o
-.PHONY : simple.cpp.o
-
-simple.i: simple.cpp.i
-
-.PHONY : simple.i
+.PHONY : split.i
 
 # target to preprocess a source file
-simple.cpp.i:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.i
-.PHONY : simple.cpp.i
+split.cpp.i:
+	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.i
+.PHONY : split.cpp.i
 
-simple.s: simple.cpp.s
+split.s: split.cpp.s
 
-.PHONY : simple.s
-
-# target to generate assembly for a file
-simple.cpp.s:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/simple.cpp.s
-.PHONY : simple.cpp.s
-
-version.o: version.cpp.o
-
-.PHONY : version.o
-
-# target to build an object file
-version.cpp.o:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.o
-.PHONY : version.cpp.o
-
-version.i: version.cpp.i
-
-.PHONY : version.i
-
-# target to preprocess a source file
-version.cpp.i:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.i
-.PHONY : version.cpp.i
-
-version.s: version.cpp.s
-
-.PHONY : version.s
+.PHONY : split.s
 
 # target to generate assembly for a file
-version.cpp.s:
-	$(MAKE) -f CMakeFiles/simple.out.dir/build.make CMakeFiles/simple.out.dir/version.cpp.s
-.PHONY : version.cpp.s
+split.cpp.s:
+	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.s
+.PHONY : split.cpp.s
 
 # Help Target
 help:
@@ -225,17 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... m.out"
-	@echo "... simple.out"
-	@echo "... mask.o"
-	@echo "... mask.i"
-	@echo "... mask.s"
-	@echo "... simple.o"
-	@echo "... simple.i"
-	@echo "... simple.s"
-	@echo "... version.o"
-	@echo "... version.i"
-	@echo "... version.s"
+	@echo "... split.out"
+	@echo "... split.o"
+	@echo "... split.i"
+	@echo "... split.s"
 .PHONY : help
 
 

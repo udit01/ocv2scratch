@@ -30,8 +30,10 @@ include_directories("${PROJECT_BINARY_DIR}")
 #target_link_libraries( bgrTg.out ${OpenCV_LIBS} )
 #add_executable( t.out traverseImages.cpp )
 #target_link_libraries( t.out ${OpenCV_LIBS} )
-add_executable( m.out mask.cpp )
-target_link_libraries( m.out ${OpenCV_LIBS} )
+#add_executable( m.out mask.cpp )
+#target_link_libraries( m.out ${OpenCV_LIBS} )
+add_executable( split.out split.cpp )
+target_link_libraries( split.out ${OpenCV_LIBS} )
 
 
 
