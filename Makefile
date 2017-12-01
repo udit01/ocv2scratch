@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named split.out
+# Target rules for targets named em.out
 
 # Build rule for target.
-split.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 split.out
-.PHONY : split.out
+em.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 em.out
+.PHONY : em.out
 
 # fast build rule for target.
-split.out/fast:
-	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/build
-.PHONY : split.out/fast
+em.out/fast:
+	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/build
+.PHONY : em.out/fast
 
-split.o: split.cpp.o
+extractMetrics.o: extractMetrics.cpp.o
 
-.PHONY : split.o
+.PHONY : extractMetrics.o
 
 # target to build an object file
-split.cpp.o:
-	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.o
-.PHONY : split.cpp.o
+extractMetrics.cpp.o:
+	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.o
+.PHONY : extractMetrics.cpp.o
 
-split.i: split.cpp.i
+extractMetrics.i: extractMetrics.cpp.i
 
-.PHONY : split.i
+.PHONY : extractMetrics.i
 
 # target to preprocess a source file
-split.cpp.i:
-	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.i
-.PHONY : split.cpp.i
+extractMetrics.cpp.i:
+	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.i
+.PHONY : extractMetrics.cpp.i
 
-split.s: split.cpp.s
+extractMetrics.s: extractMetrics.cpp.s
 
-.PHONY : split.s
+.PHONY : extractMetrics.s
 
 # target to generate assembly for a file
-split.cpp.s:
-	$(MAKE) -f CMakeFiles/split.out.dir/build.make CMakeFiles/split.out.dir/split.cpp.s
-.PHONY : split.cpp.s
+extractMetrics.cpp.s:
+	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.s
+.PHONY : extractMetrics.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... split.out"
-	@echo "... split.o"
-	@echo "... split.i"
-	@echo "... split.s"
+	@echo "... em.out"
+	@echo "... extractMetrics.o"
+	@echo "... extractMetrics.i"
+	@echo "... extractMetrics.s"
 .PHONY : help
 
 

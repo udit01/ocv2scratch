@@ -32,14 +32,19 @@ include_directories("${PROJECT_BINARY_DIR}")
 #target_link_libraries( t.out ${OpenCV_LIBS} )
 #add_executable( m.out mask.cpp )
 #target_link_libraries( m.out ${OpenCV_LIBS} )
-add_executable( split.out split.cpp )
-target_link_libraries( split.out ${OpenCV_LIBS} )
+#add_executable( split.out split.cpp )
+#target_link_libraries( split.out ${OpenCV_LIBS} )
+add_executable( em.out extractMetrics.cpp )
+target_link_libraries( em.out ${OpenCV_LIBS} )
 
 
 
 #experiment after
 #add_dependencies(simple.out ver.out )
 #target_link_libraries( simple.out ${OpenCV_LIBS} ${CMAKE_SOURCE_DIR}/simple.cpp)
+
+#add_executable( plot.out plot.cpp )
+#target_link_libraries( plot.out ${OpenCV_LIBS} )
 
 # g++ -I/usr/local/include/opencv -I/usr/local/include/opencv2 -L/usr/local/lib/ -g -o binaryName  main.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy
 # g++ `pkg-config --cflags --libs opencv` IntroConfig.h version.cpp simple.cpp

@@ -63,8 +63,8 @@ int main(int argc, char **argv)
     cv::Mat image;
     cv::Mat imageColored;
 
-    std::string imagePath = argv[1];
-    std::string imageColoredPath = argv[2];
+    std::string imagePath = argv[2];
+    std::string imageColoredPath = argv[1];
 
     image = cv::imread(imagePath, 1);
     imageColored = cv::imread(imageColoredPath, 1);
