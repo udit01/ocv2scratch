@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named em.out
+# Target rules for targets named d.out
 
 # Build rule for target.
-em.out: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 em.out
-.PHONY : em.out
+d.out: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 d.out
+.PHONY : d.out
 
 # fast build rule for target.
-em.out/fast:
-	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/build
-.PHONY : em.out/fast
+d.out/fast:
+	$(MAKE) -f CMakeFiles/d.out.dir/build.make CMakeFiles/d.out.dir/build
+.PHONY : d.out/fast
 
-extractMetrics.o: extractMetrics.cpp.o
+draw.o: draw.cpp.o
 
-.PHONY : extractMetrics.o
+.PHONY : draw.o
 
 # target to build an object file
-extractMetrics.cpp.o:
-	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.o
-.PHONY : extractMetrics.cpp.o
+draw.cpp.o:
+	$(MAKE) -f CMakeFiles/d.out.dir/build.make CMakeFiles/d.out.dir/draw.cpp.o
+.PHONY : draw.cpp.o
 
-extractMetrics.i: extractMetrics.cpp.i
+draw.i: draw.cpp.i
 
-.PHONY : extractMetrics.i
+.PHONY : draw.i
 
 # target to preprocess a source file
-extractMetrics.cpp.i:
-	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.i
-.PHONY : extractMetrics.cpp.i
+draw.cpp.i:
+	$(MAKE) -f CMakeFiles/d.out.dir/build.make CMakeFiles/d.out.dir/draw.cpp.i
+.PHONY : draw.cpp.i
 
-extractMetrics.s: extractMetrics.cpp.s
+draw.s: draw.cpp.s
 
-.PHONY : extractMetrics.s
+.PHONY : draw.s
 
 # target to generate assembly for a file
-extractMetrics.cpp.s:
-	$(MAKE) -f CMakeFiles/em.out.dir/build.make CMakeFiles/em.out.dir/extractMetrics.cpp.s
-.PHONY : extractMetrics.cpp.s
+draw.cpp.s:
+	$(MAKE) -f CMakeFiles/d.out.dir/build.make CMakeFiles/d.out.dir/draw.cpp.s
+.PHONY : draw.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... em.out"
-	@echo "... extractMetrics.o"
-	@echo "... extractMetrics.i"
-	@echo "... extractMetrics.s"
+	@echo "... d.out"
+	@echo "... draw.o"
+	@echo "... draw.i"
+	@echo "... draw.s"
 .PHONY : help
 
 

@@ -34,9 +34,10 @@ include_directories("${PROJECT_BINARY_DIR}")
 #target_link_libraries( m.out ${OpenCV_LIBS} )
 #add_executable( split.out split.cpp )
 #target_link_libraries( split.out ${OpenCV_LIBS} )
-add_executable( em.out extractMetrics.cpp )
-target_link_libraries( em.out ${OpenCV_LIBS} )
-
+#add_executable( em.out extractMetrics.cpp )
+#target_link_libraries( em.out ${OpenCV_LIBS} )
+add_executable( d.out draw.cpp )
+target_link_libraries( d.out ${OpenCV_LIBS} )
 
 
 #experiment after
